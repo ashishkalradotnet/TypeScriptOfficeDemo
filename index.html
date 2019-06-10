@@ -65,11 +65,16 @@
     
     <!-- add script tags here -->
 
-    <script data-main="js/app" src="node_modules/requirejs/require.js"></script>     
-    <!-- <script src="js/player.js" type="text/javascript"></script>
-    <script src="js/game.js" type="text/javascript"></script>
-    <script src="js/scoreboard.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script> -->
-    
+    <!--Uncomment Below if you need AMD Module Loader i.e. RequireJS-->
+    <!-- <script data-main="js/AMDModules/app" src="node_modules/requirejs/require.js"></script>         -->
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            meta:{
+                format:'cjs'
+            }
+        });
+        System.import('js/CommonJSModules/app.js');
+    </script>
 </body>
 </html>
